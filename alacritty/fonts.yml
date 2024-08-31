@@ -1,0 +1,33 @@
+font:
+  # Normal (roman) font face
+  normal:
+    family: "0xProto Nerd Font"
+    style: Medium
+
+  # Bold font face
+  bold:
+    family: "0xProto Nerd Font"
+    style: Bold
+
+  # Italic font face
+  italic:
+    family: "0xProto Nerd Font"
+    style: Italic
+
+  # Bold italic font face
+  bold_italic:
+    family: "0xProto Nerd Font"
+    style: Bold Italic
+
+  # Point size
+  size: 12
+
+  # Offset
+  #offset:
+  #  x: 0
+  #  y: 0
+
+  # Glyph offset
+  #glyph_offset:
+  #  x: 0
+  #  y: 0
