@@ -1,0 +1,38 @@
+import = ["/home/natan/.config/alacritty/colors.yml", "/home/natan/.config/alacritty/fonts.toml"]
+live_config_reload = true
+
+[cursor]
+unfocused_hollow = false
+
+[cursor.style]
+blinking = "On"
+shape = "Block"
+
+[env]
+TERM = "xterm-256color"
+
+[shell]
+args = ["-c", """
+if tmux has-session 2>/dev/null; then
+  exec tmux attach-session -d;
+else
+  exec tmux new-session;
+fi
+"""]
+program = "/usr/bin/zsh"
+
+[window]
+decorations = "full"
+dynamic_title = true
+history = 10000
+multiplier = 3
+opacity = 0.7
+startup_mode = "Windowed"
+
+[window.dimensions]
+columns = 84
+lines = 22
+
+[window.padding]
+x = 8
+y = 8
