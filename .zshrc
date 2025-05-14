@@ -108,8 +108,8 @@ fi
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 
 
-. "$HOME/.cargo/env"
-. "$HOME/.asdf/asdf.sh"
+source "$HOME/.cargo/env"
+source "$HOME/.asdf/asdf.sh"
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
@@ -123,7 +123,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 export ANDROID_HOME="$HOME/Android/Sdk"
-export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
+export NDK_HOME="$ANDROID_HOME/ndk/28.0.12433566/"
 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
@@ -142,6 +142,13 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 [[ ! -r '/home/natan/.opam/opam-init/init.zsh' ]] || source '/home/natan/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
 
-sudo sysctl -w vm.max_map_count=1048576
-sudo sysctl kernel.split_lock_mitigate=0
 
+[ -f "/home/natan/.ghcup/env" ] && . "/home/natan/.ghcup/env" # ghcup-env
+export PATH="/home/natan/.local/bin:$PATH"
+export PATH="/home/natan/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/natan/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
+
+source ~/.asdf/plugins/golang/set-env.zsh
+
+export PATH="$GOPATH/bin:$PATH"
